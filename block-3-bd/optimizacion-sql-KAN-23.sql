@@ -1,4 +1,3 @@
-
 -- =====================================================
 -- KAN-23 - OPTIMIZACIÓN DE CONSULTAS SQL
 -- Base de datos: mentorias
@@ -96,16 +95,17 @@ LIMIT 20;
 -- =====================================================
 -- 6. ÍNDICES RECOMENDADOS (OPTIMIZACIÓN DE RENDIMIENTO)
 -- =====================================================
+-- Nota: mejoras propuestas para futuras optimizaciones del sistema
 
 -- Mejora JOIN principal
 CREATE INDEX idx_perfiles_usuario_id 
 ON perfiles(usuario_id);
 
--- Filtrado por rol
+-- Filtrado por rol (mentores)
 CREATE INDEX idx_usuarios_rol 
 ON usuarios(rol);
 
--- Filtrado por estado
+-- Filtrado por estado activo/inactivo
 CREATE INDEX idx_usuarios_estado 
 ON usuarios(estado);
 
@@ -113,7 +113,7 @@ ON usuarios(estado);
 CREATE INDEX idx_perfiles_carrera 
 ON perfiles(carrera);
 
--- Filtros combinados frecuentes
+-- Optimización de consultas combinadas frecuentes
 CREATE INDEX idx_usuarios_rol_estado 
 ON usuarios(rol, estado);
 
