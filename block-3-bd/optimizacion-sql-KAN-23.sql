@@ -15,7 +15,7 @@
 SELECT *
 FROM usuarios u
 JOIN perfiles p ON p.usuario_id = u.id
-WHERE u.rol = 1;
+WHERE u.rol = 2;
 
 
 -- =====================================================
@@ -36,7 +36,7 @@ SELECT
     p.disponibilidad
 FROM usuarios u
 INNER JOIN perfiles p ON p.usuario_id = u.id
-WHERE u.rol = 1
+WHERE u.rol = 2
 AND u.estado = 'activo';
 
 
@@ -53,7 +53,7 @@ SELECT
     p.disponibilidad
 FROM usuarios u
 INNER JOIN perfiles p ON p.usuario_id = u.id
-WHERE u.rol = 1
+WHERE u.rol = 2
 AND u.estado = 'activo'
 AND p.carrera = 'Software';
 
@@ -72,7 +72,7 @@ SELECT
     p.disponibilidad
 FROM usuarios u
 INNER JOIN perfiles p ON p.usuario_id = u.id
-WHERE u.rol = 1
+WHERE u.rol = 2
 AND u.estado = 'activo'
 AND p.ciclo >= 5;
 
@@ -88,7 +88,7 @@ SELECT
     p.carrera
 FROM usuarios u
 INNER JOIN perfiles p ON p.usuario_id = u.id
-WHERE u.rol = 1
+WHERE u.rol = 2
 AND u.estado = 'activo'
 LIMIT 20;
 
